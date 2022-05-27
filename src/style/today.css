@@ -1,0 +1,117 @@
+#summary-cont {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-cont {
+    /* border: 2px solid black; */
+    font-weight: 300;
+}
+
+#summar-header-cont {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 3rem;
+}
+
+#summary-info-cont {
+    width: 100%;
+    height: 20%;
+    display: flex;
+}
+
+.info-cont {
+    /* border: 2px solid black; */
+    width: max-content
+}
+
+#today-data-cont {
+    box-sizing: border-box;
+    width: min-content;
+    padding-right: 30px;
+}
+
+#city-cont {
+    margin-top: 10px;
+    /* border: 2px solid black; */
+    display: flex;
+}
+
+#city-cont #city {
+    margin-right: 5px;
+}
+
+#date-time-cont {
+    margin-top: 8px;
+    /* border: 2px solid black; */
+}
+
+#temp-cont {
+    /* border: 2px solid black; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#misc-info-cont {
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#misc-cont {
+    margin-top: 20px;
+    /* border: 2px solid beige; */
+    width: 80%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+.today-weather-cont {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 2fr;
+    /* border: 2px solid black; */
+}
+
+.today-weather-icon-cont {
+    padding-top: 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    /* border: 2px solid black; */
+    grid-row: 1/3;
+    grid-column: 1/2;
+}
+
+.today-weather-header-cont {
+    grid-column: 2;
+    grid-row: 1;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.today-weather-info-cont {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-weight: bold;
+    font-size: 2rem;
+}
