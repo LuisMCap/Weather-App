@@ -1,0 +1,137 @@
+/* Header and input search city */
+
+#user-input-cont {
+    /* border: 2px solid black; */
+}
+
+#search-header-cont {
+    /* border: 2px solid black; */
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#search-input-cont {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: beige 2px solid; */
+    height: auto;
+    flex-direction: column;
+    width: 50%;
+}
+
+#search-city{
+    margin-top: 8px;
+    border-radius: 5px;
+    height: 25px;
+    width: auto;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    font-family: 'Manrope';
+    font-weight: 100;
+}
+
+#search-label {
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+/* Most common btns */
+
+#btns-cont {
+    /* border: 2px solid black; */
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    height: 30%;
+}
+
+#most-common-btn-cont {
+    /* border: 2px solid beige; */
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px,auto));
+    grid-auto-rows: 30px;
+    gap: 10px;
+    justify-content: center;
+}
+
+.city-btn {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255);
+    color: black;
+    mix-blend-mode: screen;
+    font-weight: 600;
+    font-family: 'Manrope';
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 100ms;
+}
+
+.city-btn:hover {
+    transform: scale(1.05) translateZ(0);
+    backface-visibility: hidden;
+    display: table;
+}
+
+/* Display */
+
+#filter-cont {
+    /* border: 2px solid beige; */
+    display: flex;
+    justify-content: flex-end;
+    height: 20%;
+}
+
+#change-metrics-cont {
+    /* border: 2px solid black; */
+    width: 50%;
+}
+
+#change-metric-header-cont{
+    font-size: 1.2rem;
+    font-weight: 100;
+    /* border: 2px solid white; */
+    display: flex;
+    justify-content: center;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+#change-metrics-cf-cont {
+    /* border: 2px solid white; */
+    display: flex;
+    justify-content: center;
+}
+
+.change-metrics-btn {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    font-weight: 100;
+    font-family: 'Manrope';
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 100ms;
+    width: 85px;
+    height: 30px;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+}
+
+#c-btn {
+    margin-right: 10px;
+}
+
+.btn-active {
+    border: 1px solid white;
+}
