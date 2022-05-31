@@ -1,3 +1,5 @@
+import Cloud from '../assets/cloud.svg'
+
 class DayCont {
     constructor(day, temp, lowestTemp) {
         this.day = day;
@@ -41,7 +43,7 @@ class DayCont {
         this.weatherDay.textContent = this.day
         this.weatherTemp.textContent = this.temp
         this.lowerTemp.textContent = this.lowestTemp
-        this.iconWeather.src = 'assets/cloud.svg'
+        this.iconWeather.src = Cloud
     }
 
     update() {
