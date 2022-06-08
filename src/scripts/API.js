@@ -6,8 +6,16 @@ console.log(new Date(1653523200*1000))
 
 const API = (function () {
     const KEY = 'db3820a5bf5795504ce2145bce769201'
-    let lat = ''
-    let lon = ''
+
+    async function fetchCoordinates(selectedCity) {
+        try {
+            let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&APPID=${KEY}`)
+            return await response.json()
+        }
+        catch(err) {
+            console.error(err)
+        }
+    }
 
     async function fetchData(lat,lon) {
         let units = 'metric'
@@ -20,18 +28,8 @@ const API = (function () {
         }
     }
 
-    async function fetchCoordinates(selectedCity) {
-        try {
-            let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&APPID=${KEY}`)
-            return await response.json()
-        }
-        catch(err) {
-            console.error(err)
-        }
-    }
-
-    async function getData() {
-        let coordinates = await fetchCoordinates('madrid')
+    async function getData(city) {
+        let coordinates = await fetchCoordinates(city)
         return await fetchData(coordinates['coord']['lat'], coordinates['coord']['lon'])
     }
 

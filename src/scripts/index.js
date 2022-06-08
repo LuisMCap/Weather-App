@@ -1,8 +1,8 @@
-// import {getData} from './API'
 import '../style/style.css'
 import {SearchCont} from './searchCont'
 import {DayCont} from './weatherCont'
 import {API} from './API'
+import {TodayCont} from './todayCont'
 
 let weatherForecastCont = document.getElementById('weather-forecast')
 
@@ -22,10 +22,21 @@ const Page = (function() {
     const feelsLike = document.getElementById('feels-like')
 
     async function populateFields() {
-        let data = await API.getData()
-        feelsLike.textContent = data.daily['0']['feels_like']['day']
-        console.log(data.daily['0']['feels_like']['day'])
-        console.log(new Date(data.daily['0'].sunrise*1000))
+        let data = await API.getData('caracas')
+        console.log(data.current)
+        console.log(data)
+        console.log(new Date(data.current.dt*1000).toDateString())
+        console.log(new Date(data.current.dt*1000).toLocaleDateString())
+        console.log(new Date(data.current.dt*1000).toLocaleTimeString())
+        populateTodayFields(data)
+    }
+
+    const populateTodayFields = (data) => {
+        TodayCont.changeTodaySpecs(
+            data.current.feels_like, 
+            data.current.humidity, 
+            data.daily['0'].pop,
+            data.current.wind_speed)
     }
 
     const updateDOM = () => {
