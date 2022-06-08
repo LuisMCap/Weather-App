@@ -96,12 +96,13 @@
 }
 
 .today-weather-icon-cont {
-    height: 100%;
-    width: 50px;
+    margin-right: 8px;
+    height: 70px;
+    width: 70px;
     box-sizing: border-box;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     /* border: 2px solid black; */
 }
 
