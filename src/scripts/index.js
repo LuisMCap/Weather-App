@@ -19,10 +19,12 @@ monday.appendToElement(weatherForecastCont)
 
 const Page = (function() {
     const weatherForecastCont = document.getElementById('weather-forecast')
+    const feelsLike = document.getElementById('feels-like')
 
     async function populateFields() {
         let data = await API.getData()
-        console.log(data.daily['0'])
+        feelsLike.textContent = data.daily['0']['feels_like']['day']
+        console.log(data.daily['0']['feels_like']['day'])
         console.log(new Date(data.daily['0'].sunrise*1000))
     }
 
