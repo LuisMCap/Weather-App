@@ -33,7 +33,6 @@ const API = (function () {
         return await fetchData(coordinates['coord']['lat'], coordinates['coord']['lon'])
     }
 
-
     const showData = () => {
         console.log(data)
         data.then(fetchedData => {

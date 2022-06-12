@@ -60,13 +60,21 @@ const SearchCont = (function() {
         })
     }
 
+    const getMetrics = () => {
+        for (let btn of displayBtns) {
+            if (btn.classList.contains('btn-active')) {
+                return btn.innerHTML
+                }
+            }
+        };
+
     const update = () => {
         clickDisplayBtn()
         defaultMetric()
         enterSearchCity()
     }
 
-    return {update}
+    return {update, getMetrics}
 })();
 
 export {SearchCont}

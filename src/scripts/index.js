@@ -11,24 +11,13 @@ let monday = new DayCont('Monday', '28', '26')
 monday.update()
 monday.appendToElement(weatherForecastCont)
 
-// let data = API.getData()
-
-// data.then(data=> {
-//     console.log(data)
-// })
-
 const Page = (function() {
-    const weatherForecastCont = document.getElementById('weather-forecast')
-    const feelsLike = document.getElementById('feels-like')
 
     async function populateFields() {
-        let data = await API.getData('caracas')
-        console.log(data.current)
+        let data = await API.getData('Las Vegas')
         console.log(data)
-        console.log(new Date(data.current.dt*1000).toDateString())
-        console.log(new Date(data.current.dt*1000).toLocaleDateString())
-        console.log(new Date(data.current.dt*1000).toLocaleTimeString())
         populateTodayFields(data)
+        populateTodayDate(data)
     }
 
     const populateTodayFields = (data) => {
@@ -37,11 +26,19 @@ const Page = (function() {
             data.current.humidity, 
             data.daily['0'].pop,
             data.current.wind_speed)
-    }
+    };
+
+    const populateTodayDate = (data) => {
+        TodayCont.changeTodayDate(
+            data.timezone.split('/')[1],
+            new Date(data.current.dt*1000).toLocaleDateString(),
+            new Date(data.current.dt*1000).toLocaleTimeString()
+        )
+    };
 
     const updateDOM = () => {
         SearchCont.update()
-    }
+    };
 
     return {updateDOM, populateFields}
 })()
