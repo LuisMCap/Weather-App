@@ -4,13 +4,13 @@ import {DayCont} from './weatherCont'
 import {API} from './API'
 import {TodayCont} from './todayCont'
 import {Backround} from './utils'
+import { ForecastCont } from './forecastCont'
 
-let weatherForecastCont = document.getElementById('weather-forecast')
+// let weatherForecastCont = document.getElementById('weather-forecast')
 
-
-let monday = new DayCont('Monday', '28', '26')
-monday.update()
-monday.appendToElement(weatherForecastCont)
+// let monday = new DayCont('Monday', '28', '26')
+// monday.update()
+// monday.appendToElement(weatherForecastCont)
 
 const Page = (function() {
     async function populateFields(city) {
@@ -19,6 +19,7 @@ const Page = (function() {
         console.log(data)
         populateTodayFields(data)
         populateTodayDate(data)
+        loopDailyData(data)
     }
 
     const populateTodayFields = (data) => {
@@ -42,6 +43,16 @@ const Page = (function() {
     const updateDOM = () => {
         SearchCont.update()
     };
+
+    const loopDailyData = (data) =>{
+        for (let i=0;i<data.daily.length; i++) {
+            if (i==0) {continue}
+            let day = new Date((data.daily[i].dt+14400+data.timezone_offset)*1000).getDay()
+            let temp = Math.round(data.daily[i].temp.max)
+            let min = Math.round(data.daily[i].temp.min)
+            ForecastCont.createDayCont(day,temp,min)
+        }
+    }
 
     return {updateDOM, populateFields}
 })()
