@@ -3,6 +3,7 @@ import {SearchCont} from './searchCont'
 import {DayCont} from './weatherCont'
 import {API} from './API'
 import {TodayCont} from './todayCont'
+import {Backround} from './utils'
 
 let weatherForecastCont = document.getElementById('weather-forecast')
 
@@ -14,7 +15,8 @@ monday.appendToElement(weatherForecastCont)
 const Page = (function() {
     async function populateFields(city) {
         let data = await API.getData(city)
-        console.log(data.current.temp)
+        Backround.setDayOrNightBackground(new Date((data.current.dt+14400+data.timezone_offset)*1000))
+        console.log(data)
         populateTodayFields(data)
         populateTodayDate(data)
     }
@@ -32,8 +34,8 @@ const Page = (function() {
     const populateTodayDate = (data) => {
         TodayCont.changeTodayDate(
             data.timezone.split('/')[1].replace('_',' '),
-            new Date(data.current.dt*1000).toLocaleDateString(),
-            new Date(data.current.dt*1000).toLocaleTimeString()
+            new Date((data.current.dt+14400+data.timezone_offset)*1000).toLocaleDateString(),
+            new Date((data.current.dt+14400+data.timezone_offset)*1000).toLocaleTimeString()
         )
     };
 

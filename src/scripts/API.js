@@ -2,8 +2,6 @@
 // https://api.openweathermap.org/data/2.5/weather?q=madrid&APPID=20f7632ffc2c022654e4093c6947b4f4
 // https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=minutely,alerts&units=${units}&appid=20f7632ffc2c022654e4093c6947b4f4`
 
-console.log(new Date(1653523200*1000))
-
 const API = (function () {
     const KEY = 'db3820a5bf5795504ce2145bce769201'
 

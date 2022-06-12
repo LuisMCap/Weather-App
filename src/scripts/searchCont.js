@@ -45,7 +45,6 @@ const SearchCont = (function() {
 
     const maxNumberBtns = () => {
         let gridBtns = document.querySelectorAll('.city-btn')
-        console.log(gridBtns.length)
         if (gridBtns.length > 8) {
             cityGridBtnsCont.removeChild(cityGridBtnsCont.lastElementChild)
         }
