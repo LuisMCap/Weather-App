@@ -14,8 +14,8 @@ monday.appendToElement(weatherForecastCont)
 const Page = (function() {
 
     async function populateFields() {
-        let data = await API.getData('Las Vegas')
-        console.log(data)
+        let data = await API.getData('los angeles')
+        console.log(data.current.temp)
         populateTodayFields(data)
         populateTodayDate(data)
     }
@@ -25,12 +25,14 @@ const Page = (function() {
             data.current.feels_like, 
             data.current.humidity, 
             data.daily['0'].pop,
-            data.current.wind_speed)
+            data.current.wind_speed,
+            data.current.temp
+        )
     };
 
     const populateTodayDate = (data) => {
         TodayCont.changeTodayDate(
-            data.timezone.split('/')[1],
+            data.timezone.split('/')[1].replace('_',' '),
             new Date(data.current.dt*1000).toLocaleDateString(),
             new Date(data.current.dt*1000).toLocaleTimeString()
         )

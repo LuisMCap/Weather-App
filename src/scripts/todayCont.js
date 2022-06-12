@@ -6,7 +6,8 @@ const TodayCont = (function() {
     const humidity = document.getElementById('humidity')
     const chanceOfRain = document.getElementById('chance-rain')
     const windSpeed = document.getElementById('wind-speed')
-    const elementsArray = [feelsLike, humidity, chanceOfRain, windSpeed]
+    const todayTemp = document.getElementById('temp')
+    const elementsArray = [feelsLike, humidity, chanceOfRain, windSpeed, todayTemp]
 
     const city = document.getElementById('city')
     const todayDate = document.getElementById('today-date')
@@ -16,8 +17,8 @@ const TodayCont = (function() {
         element.textContent = text
     };
     
-    const changeTodaySpecs = (feels, hum, chance, wind) => {
-        let valuesToDisplay = [feels, hum, chance, wind]
+    const changeTodaySpecs = (feels, hum, chance, wind, temp) => {
+        let valuesToDisplay = [feels, hum, chance, wind, temp]
         for (let i=0;i<elementsArray.length;i++) {
             let value = roundCurrent(elementsArray[i], valuesToDisplay[i])
             if (value) {
@@ -32,7 +33,7 @@ const TodayCont = (function() {
     const roundCurrent = (element, value) => {
         let metrics = SearchCont.getMetrics()
         if (metrics == 'Celcius') {
-            if (element.id == 'feels-like') {
+            if (element.id == 'feels-like' || element.id == 'temp') {
                 value = `${Math.round(value)} °C`
             }
             else if (element.id == 'wind-speed') {
@@ -43,7 +44,7 @@ const TodayCont = (function() {
             }
         }
         else if (metrics == 'Farenheit') {
-            if (element.id == 'feels-like') {
+            if (element.id == 'feels-like' || element.id == 'temp') {
                 value = `${Math.round(value)} °F`
             }
             else if (element.id == 'wind-speed') {
