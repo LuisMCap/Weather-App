@@ -5,7 +5,7 @@
 
 
 body {
-    background-image: url('../assets/miami.jpg');
+    background-image: url('../assets/cabin-dark2.jpg');
     margin: 0;
     padding: 0;
     background-size: cover;
@@ -14,7 +14,7 @@ body {
 }
 
 #body-cont {
-    background-color: rgba(0, 0, 0,0.3);
+    background-color: rgba(0, 0, 0,0.35);
     display: grid;
     grid-template-columns: 400px 1000px 400px;
     grid-template-rows: 60vh 40vh;

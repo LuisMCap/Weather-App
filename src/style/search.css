@@ -46,7 +46,7 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
-    height: 30%;
+    height: min-content;
 }
 
 #most-common-btn-cont {
@@ -54,7 +54,7 @@
     width: 50%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(70px,auto));
-    grid-auto-rows: 30px;
+    grid-auto-rows: minmax(min-content, 30px);
     gap: 10px;
     justify-content: center;
 }
@@ -83,14 +83,13 @@
 /* Display */
 
 #filter-cont {
-    /* border: 2px solid beige; */
     display: flex;
     justify-content: flex-end;
     height: 20%;
 }
 
 #change-metrics-cont {
-    /* border: 2px solid black; */
+    margin-top: 15px;
     width: 50%;
 }
 
