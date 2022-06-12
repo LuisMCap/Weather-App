@@ -30,4 +30,16 @@ const Backround = (function(){
     return {setDayOrNightBackground}
 })()
 
+const Metric = (function(){
+    const metrics = {
+        'Celcius': '°C',
+        'Fahrenheit': '°F'
+    };
+
+    const getDegrees = (displayedMetric) => {
+        return metrics[displayedMetric]
+    };
+    
+})()
+
 export {Backround}

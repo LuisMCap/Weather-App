@@ -42,7 +42,7 @@ const TodayCont = (function() {
                 value = `${value}%`
             }
         }
-        else if (metrics == 'Farenheit') {
+        else if (metrics == 'Fahrenheit') {
             if (element.id == 'feels-like' || element.id == 'temp') {
                 value = `${Math.round(value)} °F`
             }
