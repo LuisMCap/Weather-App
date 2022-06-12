@@ -1,4 +1,3 @@
-import { da } from "date-fns/locale"
 import { SearchCont } from "./searchCont"
 
 const TodayCont = (function() {

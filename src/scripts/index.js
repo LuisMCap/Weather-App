@@ -12,9 +12,8 @@ monday.update()
 monday.appendToElement(weatherForecastCont)
 
 const Page = (function() {
-
-    async function populateFields() {
-        let data = await API.getData('los angeles')
+    async function populateFields(city) {
+        let data = await API.getData(city)
         console.log(data.current.temp)
         populateTodayFields(data)
         populateTodayDate(data)
@@ -46,4 +45,6 @@ const Page = (function() {
 })()
 
 Page.updateDOM()
-Page.populateFields()
+Page.populateFields('caracas')
+
+export {Page}

@@ -1,3 +1,5 @@
+import {Page} from './index'
+
 const SearchCont = (function() {
     const cBtn = document.getElementById('c-btn')
     const fBtn = document.getElementById('f-btn')
@@ -5,17 +7,24 @@ const SearchCont = (function() {
     const searchInput = document.getElementById('search-city')
     let cityValue = ''
     const cityGridBtnsCont = document.getElementById('most-common-btn-cont')
+    let cityBtns = document.querySelectorAll('.city-btn')
 
     // Search cont
 
-    const enterSearchCity = () => {
+    const enterSearchCity = (populate) => {
         searchInput.addEventListener('keypress', e => {
             if (e.key == 'Enter') {
                 cityValue = searchInput.value
-                console.log(cityValue)
+                addNewCityBtn()
+                maxNumberBtns()
+                populate(cityValue)
                 searchInput.value = ''
             }
         })
+    }
+
+    const getInputValue = () => {
+        return cityValue
     }
 
     // Buttons grid
@@ -23,12 +32,14 @@ const SearchCont = (function() {
     const addNewCityBtn = () => {
         let newBtn = createNewCityBtn()
         cityGridBtnsCont.prepend(newBtn)
+        cityBtns = document.querySelectorAll('.city-btn')
+        clickCityBtn(Page.populateFields, cityValue)
     }
 
     const createNewCityBtn = () => {
         let newBtn = document.createElement('button')
         newBtn.classList.add('city-btn')
-        newBtn.innerText = cityValue
+        newBtn.innerText = cityValue.charAt(0).toUpperCase() + cityValue.slice(1)
         return newBtn
     }
 
@@ -68,13 +79,23 @@ const SearchCont = (function() {
             }
         };
 
+    // Buttons action 
+
+    const clickCityBtn = (populate, city) => {
+        cityBtns.forEach(btn => {
+            btn.addEventListener('click', e=> {
+                populate(btn.innerHTML)
+            })
+        })
+    }
+
     const update = () => {
         clickDisplayBtn()
         defaultMetric()
-        enterSearchCity()
+        enterSearchCity(Page.populateFields)
     }
 
-    return {update, getMetrics}
+    return {update, getMetrics, getInputValue}
 })();
 
 export {SearchCont}
