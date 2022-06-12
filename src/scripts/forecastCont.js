@@ -12,10 +12,6 @@ const ForecastCont = (function() {
         6: 'Saturday'
     }
 
-    const appendCont = () => {
-
-    }
-
     const createDayCont = (dayNumber, temp, min) => {
         let day = weekDays[dayNumber]
         let dayCont = new DayCont(day, temp, min)
