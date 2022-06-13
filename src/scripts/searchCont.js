@@ -56,9 +56,11 @@ const SearchCont = (function() {
         cBtn.classList.add('btn-active')
     }
     
-    const clickDisplayBtn = () => {
+    const clickDisplayBtn = (populate) => {
         displayBtns.forEach(btn=> {
             btn.addEventListener('click', e => {
+                let currentCity = document.getElementById('city').innerText
+                populate(currentCity)
                 if (btn.id == 'f-btn') {
                     cBtn.classList.remove('btn-active')
                 }
@@ -89,7 +91,7 @@ const SearchCont = (function() {
     }
 
     const update = () => {
-        clickDisplayBtn()
+        clickDisplayBtn(Page.populateFields)
         defaultMetric()
         enterSearchCity(Page.populateFields)
     }

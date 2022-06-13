@@ -35,11 +35,22 @@ const Metric = (function(){
         'Celcius': '°C',
         'Fahrenheit': '°F'
     };
+    
+    const units = {
+        'Celcius': 'metric',
+        'Fahrenheit': 'imperial'
+    };
 
     const getDegrees = (displayedMetric) => {
         return metrics[displayedMetric]
     };
-    
+
+    const getUnits = (displayedMetric) => {
+        return units[displayedMetric]
+    }
+
+    return {getDegrees, getUnits}
+
 })()
 
-export {Backround}
+export {Backround, Metric}

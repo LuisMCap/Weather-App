@@ -1,4 +1,5 @@
 import { SearchCont } from "./searchCont"
+import { Metric } from "./utils"
 
 const TodayCont = (function() {
     const feelsLike = document.getElementById('feels-like')
@@ -31,9 +32,8 @@ const TodayCont = (function() {
 
     const roundCurrent = (element, value) => {
         let metrics = SearchCont.getMetrics()
-        if (metrics == 'Celcius') {
             if (element.id == 'feels-like' || element.id == 'temp') {
-                value = `${Math.round(value)} °C`
+                value = `${Math.round(value)} ${Metric.getDegrees(metrics)}`
             }
             else if (element.id == 'wind-speed') {
                 value = `${(Math.round(value * 10 * 3.6) / 10)} km/h`
@@ -41,18 +41,6 @@ const TodayCont = (function() {
             else {
                 value = `${value}%`
             }
-        }
-        else if (metrics == 'Fahrenheit') {
-            if (element.id == 'feels-like' || element.id == 'temp') {
-                value = `${Math.round(value)} °F`
-            }
-            else if (element.id == 'wind-speed') {
-                value = `${(Math.round(value * 10 * 3.6) / 10)} km/h`
-            }
-            else {
-                value = `${value}%`
-            }
-        }
         return value
     };
 

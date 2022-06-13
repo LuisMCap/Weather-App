@@ -45,6 +45,7 @@ const Page = (function() {
     };
 
     const loopDailyData = (data) =>{
+        ForecastCont.cleanCont()
         for (let i=0;i<data.daily.length; i++) {
             if (i==0) {continue}
             let day = new Date((data.daily[i].dt+14400+data.timezone_offset)*1000).getDay()

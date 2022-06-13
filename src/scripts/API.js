@@ -2,6 +2,9 @@
 // https://api.openweathermap.org/data/2.5/weather?q=madrid&APPID=20f7632ffc2c022654e4093c6947b4f4
 // https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=minutely,alerts&units=${units}&appid=20f7632ffc2c022654e4093c6947b4f4`
 
+import { SearchCont } from "./searchCont"
+import { Metric } from "./utils"
+
 const API = (function () {
     const KEY = 'db3820a5bf5795504ce2145bce769201'
 
@@ -16,7 +19,8 @@ const API = (function () {
     }
 
     async function fetchData(lat,lon) {
-        let units = 'metric'
+        let metrics = SearchCont.getMetrics()
+        let units = Metric.getUnits(metrics)
         try{
             let response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&units=${units}&appid=20f7632ffc2c022654e4093c6947b4f4`)
             return await response.json()
