@@ -11,6 +11,7 @@ body {
     background-size: cover;
     color: white;
     font-family: 'Manrope';
+    transition: background-image 0.5s;
 }
 
 #body-cont {

@@ -40,10 +40,6 @@ const Page = (function() {
         )
     };
 
-    const updateDOM = () => {
-        SearchCont.update()
-    };
-
     const loopDailyData = (data) =>{
         ForecastCont.cleanCont()
         for (let i=0;i<data.daily.length; i++) {
@@ -53,7 +49,11 @@ const Page = (function() {
             let min = Math.round(data.daily[i].temp.min)
             ForecastCont.createDayCont(day,temp,min)
         }
-    }
+    };
+
+    const updateDOM = () => {
+        SearchCont.update()
+    };
 
     return {updateDOM, populateFields}
 })()

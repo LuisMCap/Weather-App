@@ -36,7 +36,12 @@ const TodayCont = (function() {
                 value = `${Math.round(value)} ${Metric.getDegrees(metrics)}`
             }
             else if (element.id == 'wind-speed') {
-                value = `${(Math.round(value * 10 * 3.6) / 10)} km/h`
+                if (metrics == 'Celcius') {
+                    value = `${(Math.round(value * 10 * 3.6) / 10)} km/h`
+                }
+                else {
+                    value = `${(Math.round(value * 10) / 10)} mph`
+                }
             }
             else {
                 value = `${value}%`

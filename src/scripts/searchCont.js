@@ -5,9 +5,9 @@ const SearchCont = (function() {
     const fBtn = document.getElementById('f-btn')
     const displayBtns = document.querySelectorAll('.change-metrics-btn')
     const searchInput = document.getElementById('search-city')
-    let cityValue = ''
     const cityGridBtnsCont = document.getElementById('most-common-btn-cont')
     let cityBtns = document.querySelectorAll('.city-btn')
+    let cityValue = ''
 
     // Search cont
 
@@ -86,6 +86,7 @@ const SearchCont = (function() {
         cityBtns.forEach(btn => {
             btn.addEventListener('click', e=> {
                 populate(btn.innerHTML)
+                searchInput.value = ''
             })
         })
     }

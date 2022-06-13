@@ -22,7 +22,7 @@
 
 .weather-day-cont {
     /* border: 2px solid black; */
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     height: 15%;
     display: flex;
     align-items: center;
@@ -38,7 +38,7 @@
 }
 
 .lowest-temp-cont {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 300;
 }
 
