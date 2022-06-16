@@ -1,11 +1,9 @@
 #summary-cont {
-    /* border: 2px solid black; */
     display: flex;
     flex-direction: column;
 }
 
 .sub-cont {
-    /* border: 2px solid black; */
     font-weight: 300;
 }
 
@@ -26,7 +24,6 @@
 }
 
 .info-cont {
-    /* border: 2px solid black; */
     width: max-content
 }
 
@@ -38,7 +35,6 @@
 
 #city-cont {
     margin-top: 10px;
-    /* border: 2px solid black; */
     display: flex;
 }
 
@@ -48,13 +44,10 @@
 
 #date-time-cont {
     margin-top: 8px;
-    /* border: 2px solid black; */
-    /* NEWWWW */
     width: 100px
 }
 
 #temp-cont {
-    /* border: 2px solid black; */
     height: 100%;
     width: 100%;
     display: flex;
@@ -69,7 +62,6 @@
 }
 
 #misc-info-cont {
-    /* border: 2px solid black; */
     width: 100%;
     height: 60%;
     display: flex;
@@ -78,7 +70,6 @@
 
 #misc-cont {
     margin-top: 20px;
-    /* border: 2px solid beige; */
     width: 80%;
     height: 60%;
     display: grid;
@@ -87,13 +78,11 @@
 }
 
 .today-weather-cont {
-    /* border: 2px solid black; */
     display: flex;
 }
 
 .today-weather-header-info-cont {
     font-weight: 100;
-    /* border: 2px solid black; */
     width: 100%;
 }
 
@@ -105,20 +94,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 2px solid black; */
 }
 
 .today-weather-header-cont {
     height: 25%;
     width: 100%;
-    /* border: 2px solid black; */
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
 }
 
 .today-weather-info-cont {
-    /* border: 2px solid black; */
     width: max-content;
     height: max-content;
     display: flex;

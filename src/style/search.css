@@ -1,11 +1,6 @@
 /* Header and input search city */
 
-#user-input-cont {
-    /* border: 2px solid black; */
-}
-
 #search-header-cont {
-    /* border: 2px solid black; */
     height: 20%;
     display: flex;
     justify-content: flex-end;
@@ -15,7 +10,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    /* border: beige 2px solid; */
     height: auto;
     flex-direction: column;
     width: 50%;
@@ -41,7 +35,6 @@
 /* Most common btns */
 
 #btns-cont {
-    /* border: 2px solid black; */
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -50,7 +43,6 @@
 }
 
 #most-common-btn-cont {
-    /* border: 2px solid beige; */
     width: 50%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(70px,auto));
@@ -96,7 +88,6 @@
 #change-metric-header-cont{
     font-size: 1.2rem;
     font-weight: 100;
-    /* border: 2px solid white; */
     display: flex;
     justify-content: center;
     height: auto;
@@ -104,7 +95,6 @@
 }
 
 #change-metrics-cf-cont {
-    /* border: 2px solid white; */
     display: flex;
     justify-content: center;
 }
