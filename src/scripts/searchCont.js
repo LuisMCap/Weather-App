@@ -15,8 +15,8 @@ const SearchCont = (function() {
         searchInput.addEventListener('keypress', e => {
             if (e.key == 'Enter') {
                 cityValue = searchInput.value
-                addNewCityBtn()
                 maxNumberBtns()
+                addNewCityBtn()
                 populate(cityValue)
                 searchInput.value = ''
             }
@@ -31,9 +31,11 @@ const SearchCont = (function() {
 
     const addNewCityBtn = () => {
         let newBtn = createNewCityBtn()
-        cityGridBtnsCont.prepend(newBtn)
-        cityBtns = document.querySelectorAll('.city-btn')
-        clickCityBtn(Page.populateFields, cityValue)
+        if (newBtn.textContent) {
+            cityGridBtnsCont.prepend(newBtn)
+            cityBtns = document.querySelectorAll('.city-btn')
+            clickCityBtn(Page.populateFields, cityValue)
+        }
     }
 
     const createNewCityBtn = () => {

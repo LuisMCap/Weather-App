@@ -3,7 +3,7 @@ import {SearchCont} from './searchCont'
 import {DayCont} from './weatherCont'
 import {API} from './API'
 import {TodayCont} from './todayCont'
-import {Backround} from './utils'
+import {Backround, Error} from './utils'
 import { ForecastCont } from './forecastCont'
 
 // let weatherForecastCont = document.getElementById('weather-forecast')
@@ -14,12 +14,18 @@ import { ForecastCont } from './forecastCont'
 
 const Page = (function() {
     async function populateFields(city) {
-        let data = await API.getData(city)
-        Backround.setDayOrNightBackground(new Date((data.current.dt+14400+data.timezone_offset)*1000))
-        console.log(data)
-        populateTodayFields(data)
-        populateTodayDate(data)
-        loopDailyData(data)
+        try {
+            let data = await API.getData(city)
+            Backround.setDayOrNightBackground(new Date((data.current.dt+14400+data.timezone_offset)*1000))
+            populateTodayFields(data)
+            populateTodayDate(data)
+            loopDailyData(data)
+            errorHandling()
+        }
+        catch(err) {
+            Error.notFoundError()
+            console.log(err)
+        }
     }
 
     const populateTodayFields = (data) => {
@@ -51,6 +57,10 @@ const Page = (function() {
         }
     };
 
+    const errorHandling = () => {
+        Error.cleanErrorDiv()
+    }
+
     const updateDOM = () => {
         SearchCont.update()
     };
@@ -59,6 +69,5 @@ const Page = (function() {
 })()
 
 Page.updateDOM()
-Page.populateFields('caracas')
 
 export {Page}

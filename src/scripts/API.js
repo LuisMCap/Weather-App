@@ -1,5 +1,5 @@
 import { SearchCont } from "./searchCont"
-import { Metric } from "./utils"
+import { Metric, Error } from "./utils"
 
 const API = (function () {
     const KEY = 'db3820a5bf5795504ce2145bce769201'
@@ -27,8 +27,13 @@ const API = (function () {
     }
 
     async function getData(city) {
-        let coordinates = await fetchCoordinates(city)
+        try {
+            let coordinates = await fetchCoordinates(city)
         return await fetchData(coordinates['coord']['lat'], coordinates['coord']['lon'])
+        }
+        catch(err) {
+            console.error(err)
+        }
     }
 
     const showData = () => {

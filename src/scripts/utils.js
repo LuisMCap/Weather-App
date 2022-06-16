@@ -51,6 +51,25 @@ const Metric = (function(){
 
     return {getDegrees, getUnits}
 
+})();
+
+const Error = (function(){
+    const errorDiv = document.getElementById('error-cont')
+
+    const notFoundError = () => {
+        errorDiv.textContent = "Sorry, I couldn't find that location. Please try searching a city, country or zip code"
+    }
+
+    const differentCityError = () => {
+        errorDiv.textContent = 'The API returned a different city than the one you searched for. Sorry :('
+    }
+
+    const cleanErrorDiv = () => {
+        errorDiv.textContent = ''
+    }
+
+    return {notFoundError, differentCityError, cleanErrorDiv}
+
 })()
 
-export {Backround, Metric}
+export {Backround, Metric, Error}

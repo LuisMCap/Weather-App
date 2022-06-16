@@ -1,5 +1,5 @@
 import { SearchCont } from "./searchCont"
-import { Metric } from "./utils"
+import { Metric, Error } from "./utils"
 
 const TodayCont = (function() {
     const feelsLike = document.getElementById('feels-like')
@@ -53,6 +53,14 @@ const TodayCont = (function() {
         changeTextInElement(city,desiredCity)
         changeTextInElement(todayDate,date)
         changeTextInElement(todayTime,time)
+    }
+
+    const differentCity = () => {
+        let cityValue = SearchCont.getInputValue()
+        console.log(typeof(cityValue))
+        if (city.textContent.toLowerCase() != cityValue.toLowerCase()) {
+            Error.differentCityError()
+        }
     }
     
     return {changeTodaySpecs, changeTodayDate}

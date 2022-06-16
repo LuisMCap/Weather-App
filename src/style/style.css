@@ -11,7 +11,7 @@ body {
     background-size: cover;
     color: white;
     font-family: 'Manrope';
-    transition: background-image 0.5s;
+    transition: background-image 1s;
 }
 
 #body-cont {
@@ -38,4 +38,23 @@ body {
 
 #user-input-cont {
     grid-column: 3;
+}
+
+#error-absolute {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    left: 71%;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    text-align: center;
 }
