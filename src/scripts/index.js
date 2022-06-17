@@ -6,12 +6,6 @@ import {TodayCont} from './todayCont'
 import {Backround, Error} from './utils'
 import { ForecastCont } from './forecastCont'
 
-// let weatherForecastCont = document.getElementById('weather-forecast')
-
-// let monday = new DayCont('Monday', '28', '26')
-// monday.update()
-// monday.appendToElement(weatherForecastCont)
-
 const Page = (function() {
     async function populateFields(city) {
         try {
